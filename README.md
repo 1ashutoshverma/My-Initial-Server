@@ -1,31 +1,60 @@
 1.  npm init -y
 
-2.  npm install json-server
+2.  npm install json-server json-serve cors
 
-3.  create a db.json file
-    and put some dummy data
+3.  npm install -D nodemon
 
-4.  check of json server run locally
-    json-server --watch db.json
+4.  After the installation, create a new file: index.js. This is the entry point for the json-serve. Add the following inside the file:
 
-5.  create a server.js file
+const jsonServer = require('json-server')
+const cors = require('cors')
+const path = require('path')
 
-const jsonServer = require("json-server");
-const server = jsonServer.create();
-const router = jsonServer.router("db.json");
-const middlewares = jsonServer.defaults();
+const server = jsonServer.create()
+const router = jsonServer.router(path.join(\_\_dirname, 'db.json'))
+const middlewares = jsonServer.defaults()
 
-server.use(middlewares);
-server.use("", router);
-server.listen(process.env.PORT || 5000, () => {
-console.log("JSON Server is running");
-});
+server.use(cors())
+server.use(jsonServer.bodyParser)
+server.use(middlewares)
+server.use(router)
 
-6.  change the path in package.json file
-    "main": "server.js"
+const PORT = 8000
 
-7.  put it in script tag to run the file
-    "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node server.js"
-    },
+server.listen(PORT, () => {
+console.log(`JSON Server is running on http://localhost:${PORT}`)
+})
+
+5. The mock server is ready to run, but let's add some scripts in package.json:
+
+"scripts": {
+"start": "node index.js",
+"dev": "nodemon index.js"
+},
+
+6.  npm run start
+
+7.  db.json
+
+{
+"feedback": [
+{
+"id": 1,
+"rating": 10,
+"user_name": "Tony Stark",
+"text": "You are the ironman of this world"
+},
+{
+"id": 2,
+"rating": 9,
+"user_name": "Bruce Wayne",
+"text": "You are the batman of this world"
+},
+{
+"id": 3,
+"rating": 8,
+"user_name": "Peter Parker",
+"text": "You are the spiderman of this world"
+}
+]
+}

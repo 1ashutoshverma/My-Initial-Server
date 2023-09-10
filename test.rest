@@ -1,0 +1,12 @@
+GET http://localhost:8000/user
+
+###
+POST http://localhost:8000/user
+Content-Type: application/json
+
+{
+    "name": "Ashu"
+}
+
+### 
+DELETE http://localhost:8000/user/3

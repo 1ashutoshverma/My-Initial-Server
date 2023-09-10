@@ -1,36 +1,32 @@
 {
-    "profile":[{
-        "id":1,
-        "name":"Ashutosh"
-    }],
-    "product":[
-        {
-            "product_name": "Smartphone",
-            "id": "1",
-            "price": 599.99,
-            "description": "A high-quality smartphone with advanced features.",
-            "discounted_price": 499.99
-        },
-        {
-            "product_name": "Laptop",
-            "id": "2",
-            "price": 999.99,
-            "description": "A powerful laptop for work and entertainment.",
-            "discounted_price": 899.99
-        },
-        {
-            "product_name": "Headphones",
-            "id": "3",
-            "price": 149.99,
-            "description": "Wireless headphones with noise-cancelling technology.",
-            "discounted_price": 129.99
-        },
-        {
-            "product_name": "Smartwatch",
-            "id": "4",
-            "price": 199.99,
-            "description": "A stylish smartwatch with fitness tracking features.",
-            "discounted_price": 179.99
-        }
-    ] 
+  "feedback": [
+    {
+      "id": 1,
+      "rating": 10,
+      "user_name": "Tony Stark",
+      "text": "You are the ironman of this world"
+    },
+    {
+      "id": 2,
+      "rating": 9,
+      "user_name": "Bruce Wayne",
+      "text": "You are the batman of this world"
+    },
+    {
+      "id": 3,
+      "rating": 8,
+      "user_name": "Peter Parker",
+      "text": "You are the spiderman of this world"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "Ashutosh Verma"
+    },
+    {
+      "name": "Ashu",
+      "id": 4
+    }
+  ]
 }
