@@ -10,3 +10,15 @@ Content-Type: application/json
 
 ### 
 DELETE http://localhost:8000/user/3
+
+
+###
+GET https://wild-ruby-beaver-tux.cyclic.cloud/user
+
+###
+POST https://wild-ruby-beaver-tux.cyclic.cloud/user
+Content-Type: application/json
+
+{
+    "name": "hello"
+}
